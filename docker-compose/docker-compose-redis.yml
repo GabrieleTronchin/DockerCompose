@@ -5,9 +5,11 @@ services:
   redis-monitoring:
     image: redislabs/redisinsight:latest
     pull_policy: always
-    restart: unless-stopped
     ports:
       - '8001:8001'
+    restart: unless-stopped
+    networks:
+          - default
 
   redis:  
     image: redis:latest
@@ -21,8 +23,3 @@ services:
 networks:
   default:
     driver: bridge
-
-volumes:
-  portainer_data:
-  elasticsearch-data:
-  metricbeat:
