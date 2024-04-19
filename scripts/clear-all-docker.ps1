@@ -1,6 +1,3 @@
-#remove swarm 
-# docker swarm leave --force
-
 #stop all containers
 
 docker kill $(docker ps -q)
